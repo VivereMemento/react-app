@@ -1,0 +1,28 @@
+// Montserrat
+
+@font-face {
+	@include fonts('../fonts/Montserrat/Montserrat-Light', 'Montserrat-Light');
+}
+
+@font-face {
+	@include fonts('../fonts/Montserrat/Montserrat-Regular', 'Montserrat-Regular');
+}
+
+@font-face {
+	@include fonts('../fonts/Montserrat/Montserrat-Medium', 'Montserrat-Medium');
+}
+
+@font-face {
+	@include fonts('../fonts/Montserrat/Montserrat-SemiBold', 'Montserrat-SemiBold');
+}
+
+@font-face {
+	@include fonts('../fonts/Montserrat/Montserrat-Bold', 'Montserrat-Bold');
+}
+@font-face {
+	@include fonts('../fonts/Montserrat/Montserrat-ExtraBold', 'Montserrat-ExtraBold');
+}
+@font-face {
+	@include fonts('../fonts/Montserrat/Montserrat-Black', 'Montserrat-Black');
+}
+
