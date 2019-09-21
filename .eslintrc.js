@@ -32,6 +32,7 @@ module.exports = {
 		"no-trailing-spaces": ["error", { "skipBlankLines": true }],
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 		"react/jsx-indent": [2, 'tab'],
+		"react/jsx-indent-props": [2, 'tab'],
 		"arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
 		"comma-dangle": ["error", {
 			"arrays": "never",
@@ -41,6 +42,8 @@ module.exports = {
 			"functions": "never"
 		}],
 		"react-hooks/rules-of-hooks": "error",
-		"react-hooks/exhaustive-deps": "warn"
+		"react-hooks/exhaustive-deps": "warn",
+		"react/require-default-props": [0, { forbidDefaultForRequired: true }],
+		"jsx-quotes": ["error", "prefer-single"]
 	}
 };

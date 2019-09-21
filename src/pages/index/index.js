@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
+import Router from '../../Router/Router';
 import '../../style/app.scss';
-
 import { Provider } from '../../store/redux-hooks';
 import store from '../../store/store';
 
@@ -13,7 +13,7 @@ const App = () => {
 	
 	return (
 		<Provider value={store}>
-			<div>App</div>
+			<Router />
 		</Provider>
 	);
 };
