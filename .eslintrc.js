@@ -25,15 +25,16 @@ module.exports = {
 	],
 	"rules": {
 		"linebreak-style": 0,
+		"no-nested-ternary": "off",
 		"arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+		"arrow-body-style": ["error", "as-needed"],
 		"padded-blocks": ["error", { "blocks": "never" }],
-		"no-tabs": ["error", { allowIndentationTabs: true }],
-		"indent": [2, "tab"],
+		"no-tabs": "off",
+		"indent": [2, "tab", { "flatTernaryExpressions": true }],
 		"no-trailing-spaces": ["error", { "skipBlankLines": true }],
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 		"react/jsx-indent": [2, 'tab'],
 		"react/jsx-indent-props": [2, 'tab'],
-		"arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
 		"comma-dangle": ["error", {
 			"arrays": "never",
 			"objects": "never",
@@ -44,6 +45,8 @@ module.exports = {
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
 		"react/require-default-props": [0, { forbidDefaultForRequired: true }],
-		"jsx-quotes": ["error", "prefer-single"]
+		"jsx-quotes": ["error", "prefer-single"],
+		"react/jsx-one-expression-per-line": "off",
+		"react/forbid-prop-types": 0
 	}
 };

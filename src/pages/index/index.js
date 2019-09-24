@@ -1,22 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
-import Router from '../../Router/Router';
+import Router from '../../router/Router';
 import '../../style/app.scss';
-import { Provider } from '../../store/redux-hooks';
 import store from '../../store/store';
 
 const root = document.querySelector('#root');
 
-const App = () => {
-	useEffect(() => console.log('hello'));
-	
-	return (
-		<Provider value={store}>
-			<Router />
-		</Provider>
-	);
-};
+const App = () => (
+	<Provider store={store}>
+		<Router />
+	</Provider>
+);
+
 
 ReactDOM.render(
 	<App />,
