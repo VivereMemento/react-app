@@ -1,12 +1,7 @@
 import React from 'react';
-import PageLayout from '../PageLayout/PageLayout';
 import './header.scss';
 
-const { Container } = PageLayout;
-
 const HeaderContent = () => (
-	<Container>
-		Header
-	</Container>
+	<div className='header__content'>Header</div>
 );
 export default HeaderContent;

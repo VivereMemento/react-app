@@ -5,7 +5,6 @@ module.exports = {
 		historyApiFallback: true,
 		stats: 'errors-only',
 		disableHostCheck: true,
-		host: '0.0.0.0',
 		port: 9002,
 		proxy: [{
 			path: '/api/v1.0/',

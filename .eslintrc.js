@@ -12,6 +12,7 @@ module.exports = {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
 	},
+	"parser": "babel-eslint",
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true
@@ -30,7 +31,7 @@ module.exports = {
 		"arrow-body-style": ["error", "as-needed"],
 		"padded-blocks": ["error", { "blocks": "never" }],
 		"no-tabs": "off",
-		"indent": [2, "tab", { "flatTernaryExpressions": true }],
+		"indent": [2, "tab", { "flatTernaryExpressions": true, "SwitchCase": 1 }],
 		"no-trailing-spaces": ["error", { "skipBlankLines": true }],
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 		"react/jsx-indent": [2, 'tab'],
@@ -47,6 +48,9 @@ module.exports = {
 		"react/require-default-props": [0, { forbidDefaultForRequired: true }],
 		"jsx-quotes": ["error", "prefer-single"],
 		"react/jsx-one-expression-per-line": "off",
-		"react/forbid-prop-types": 0
+		"react/forbid-prop-types": 0,
+		"no-else-return": "off",
+		"no-unused-expressions": "off",
+		"no-confusing-arrow": ["error", {"allowParens": true}]
 	}
 };
