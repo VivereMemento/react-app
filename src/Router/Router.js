@@ -14,7 +14,8 @@ const Router = () => {
 
 	useEffect(() => {
 		const articles = news?.data?.articles;
-		articles && dispatch(appInit({ news: articles }));
+		const error = news?.data?.error;
+		dispatch(appInit({ news: articles, error }));
 	}, [news, dispatch]);
 
 	return (

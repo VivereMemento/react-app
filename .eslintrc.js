@@ -51,6 +51,7 @@ module.exports = {
 		"react/forbid-prop-types": 0,
 		"no-else-return": "off",
 		"no-unused-expressions": "off",
-		"no-confusing-arrow": ["error", {"allowParens": true}]
+		"no-confusing-arrow": ["error", {"allowParens": true}],
+		"max-len": ["error", { "code": 150 }]
 	}
 };

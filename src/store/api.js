@@ -29,7 +29,8 @@ const dataReducer = (state = null, action) => {
 			return {
 				...state,
 				isLoading: false,
-				isError: true
+				isError: true,
+				data: payload
 			};
 		default:
 			return state;
@@ -72,7 +73,7 @@ const useDataApi = (
 					});
 			} catch (error) {
 				if (!didCancel) {
-					dispatch({ type: FETCH_FAILURE });
+					dispatch({ type: FETCH_FAILURE, payload: { error: error.status } });
 				}
 			}
 		};
@@ -86,7 +87,7 @@ const useDataApi = (
 };
 const baseUrl = params => `https://newsapi.org/v2/top-headlines?${params}apiKey=6adb21d430794d5da3db942ea069ff77`;
 const getData = curry(
-	(url, isImmediateLoading, initialData) => useDataApi(baseUrl(url), initialData)
+	(url, isImmediateLoading, initialData) => useDataApi(baseUrl(url), isImmediateLoading, initialData)
 );
 // const postData = (url, isImmediateLoad) => (params = {}) => {
 // 	const [posting, setUrl, setParams] = useDataApi(null, isImmediateLoad, {}, params);
@@ -100,9 +101,9 @@ const getData = curry(
 // 		activateSendData
 // 	];
 // };
-// const isNotImmediateLoading = false;
-const isImmediateLoading = true;
-const getNews = getData('country=ru&', isImmediateLoading);
+// const notImmediateLoading = false;
+const immediateLoading = true;
+const getNews = getData('country=ru&', immediateLoading);
 
 export const api = {
 	baseUrl,
