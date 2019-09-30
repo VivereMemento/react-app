@@ -117,6 +117,9 @@ Container.propTypes = {
 Page.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
+		PropTypes.number,
+		PropTypes.object,
+		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])

@@ -52,6 +52,8 @@ module.exports = {
 		"no-else-return": "off",
 		"no-unused-expressions": "off",
 		"no-confusing-arrow": ["error", {"allowParens": true}],
-		"max-len": ["error", { "code": 150 }]
+		"max-len": ["error", { "code": 150 }],
+		"no-sequences": "off",
+		"react/no-array-index-key": "off"
 	}
 };

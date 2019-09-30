@@ -1,3 +1,5 @@
+import { compose, prop } from '../../helpers';
+
 const APP_INIT = 'APP::INIT';
 
 export const appInit = (payload = {}) => ({ type: APP_INIT, payload });
@@ -10,5 +12,7 @@ const app = (state = initialState, { type, payload }) => (
 );
 
 export const getApp = state => state.app;
+export const getAppNews = state => compose(prop('news'), getApp)(state);
+export const getAppArticles = state => compose(prop('articles'), getAppNews)(state);
 
 export default app;
