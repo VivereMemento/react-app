@@ -55,34 +55,18 @@ export default PageLayout;
 
 PageLayout.propTypes = {
 	header: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	]),
 	aside: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	]),
 	main: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	]),
 	footer: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])
@@ -90,9 +74,6 @@ PageLayout.propTypes = {
 Header.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])
@@ -100,9 +81,6 @@ Header.propTypes = {
 Aside.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])
@@ -110,9 +88,6 @@ Aside.propTypes = {
 Main.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])
@@ -120,9 +95,6 @@ Main.propTypes = {
 Footer.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])
@@ -130,9 +102,6 @@ Footer.propTypes = {
 Section.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	]),
@@ -141,9 +110,6 @@ Section.propTypes = {
 Container.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])
@@ -151,9 +117,6 @@ Container.propTypes = {
 Page.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.number,
-		PropTypes.object,
-		PropTypes.array,
 		PropTypes.element,
 		PropTypes.elementType
 	])

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
-import Aside from '../components/Aside/Aside';
+import AsideContent from '../components/AsideContent/AsideContent';
 import HeaderContent from '../components/HeaderContent/HeaderContent';
 import PageLayout from '../components/PageLayout/PageLayout';
 import { appInit } from '../store/reducers/app';
@@ -25,7 +25,7 @@ const Router = () => {
 					<HeaderContent />
 				}
 				aside={
-					<Aside />
+					<AsideContent />
 				}
 				main={
 					<Routes />

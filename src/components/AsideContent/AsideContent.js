@@ -1,8 +1,8 @@
 import React from 'react';
 import './aside.scss';
 
-const Aside = () => (
+const AsideContent = () => (
 	<div className='aside__content'>Aside</div>
 );
 
-export default Aside;
+export default AsideContent;
