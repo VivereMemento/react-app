@@ -85,7 +85,8 @@ const useDataApi = (
   
 	return [state, setUrl, setParams];
 };
-const baseUrl = params => `https://newsapi.org/v2/top-headlines?${params}apiKey=6adb21d430794d5da3db942ea069ff77`;
+const mainKey = '6adb21d430794d5da3db942ea069ff77';
+const baseUrl = key => `https://newsapi.org/v2/everything?q=bitcoin&from=2019-09-04&sortBy=publishedAt&apiKey=${key}`;
 const getData = curry(
 	(url, isImmediateLoading, initialData) => useDataApi(baseUrl(url), isImmediateLoading, initialData)
 );
@@ -103,7 +104,7 @@ const getData = curry(
 // };
 // const notImmediateLoading = false;
 const immediateLoading = true;
-const getNews = getData('country=ru&', immediateLoading);
+const getNews = getData(mainKey, immediateLoading);
 
 export const api = {
 	baseUrl,
