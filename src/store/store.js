@@ -1,12 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import app from './reducers/app';
-import counter from './reducers/counter';
+import reducers from './reducers';
 
 const store = createStore(
 	combineReducers({
-		app,
-		counter
+		...reducers
 	}),
 	composeWithDevTools(applyMiddleware())
 );

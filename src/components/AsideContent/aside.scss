@@ -1,3 +1,7 @@
 .aside {
 	background: red;
+
+	&__content {
+		height: 100%;
+	}
 }

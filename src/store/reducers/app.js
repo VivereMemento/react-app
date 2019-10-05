@@ -12,6 +12,7 @@ const app = (state = initialState, { type, payload }) => (
 // selecotrs
 export const getApp = state => state.app;
 export const getAppNews = state => compose(prop('news'), getApp)(state);
+export const getAppNewsSource = state => compose(prop('sources'), getAppNews)(state);
 export const getAppNewsError = state => compose(prop('error'), getAppNews)(state);
 export const getAppArticles = state => compose(prop('articles'), getAppNews)(state);
 

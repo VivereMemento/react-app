@@ -86,7 +86,7 @@ const useDataApi = (
 	return [state, setUrl, setParams];
 };
 const mainKey = '6adb21d430794d5da3db942ea069ff77';
-const baseUrl = key => `https://newsapi.org/v2/everything?q=bitcoin&from=2019-09-04&sortBy=publishedAt&apiKey=${key}`;
+const baseUrl = key => `https://newsapi.org/v2/sources?apiKey=${key}`;
 const getData = curry(
 	(url, isImmediateLoading, initialData) => useDataApi(baseUrl(url), isImmediateLoading, initialData)
 );

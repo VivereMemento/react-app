@@ -1,0 +1,26 @@
+.select {
+	position: relative;
+
+	&_active {
+		& .select__list {
+			visibility: visible;
+		}
+	}
+
+	&__title {
+		display: block;
+		cursor: pointer;
+	}
+
+	&__list {
+		width: 100%;
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	&__item {
+		cursor: pointer;
+	}
+}
