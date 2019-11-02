@@ -20,21 +20,22 @@ const Counter = () => {
 	return (
 		<section className='counter'>
 			<div className='container'>
-				<span>{data.count}</span>
-				<CountBtn title='Inc' handleClick={incrementCounter} />
-				<CountBtn title='Dec' handleClick={decrementCounter} />
+				<span data-testid='count'>{`Count is ${data.count}`}</span>
+				<CountBtn id='inc' title='Inc' handleClick={incrementCounter} />
+				<CountBtn id='dec' title='Dec' handleClick={decrementCounter} />
 			</div>
 		</section>
 	);
 };
 
-const CountBtn = React.memo(({ title, handleClick }) => (
-	<button type='button' onClick={handleClick}>{title}</button>
+export const CountBtn = React.memo(({ id, title, handleClick }) => (
+	<button data-testid={id} id={id} type='button' onClick={handleClick}>{title}</button>
 ));
 
 export default Counter;
 
 CountBtn.propTypes = {
+	id: PropTypes.string,
 	title: PropTypes.string,
 	handleClick: PropTypes.func
 };

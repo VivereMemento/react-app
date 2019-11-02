@@ -1,5 +1,5 @@
-const COUNT_INC = 'COUNT::INC';
-const COUNT_DEC = 'COUNT::DEC';
+export const COUNT_INC = 'COUNT::INC';
+export const COUNT_DEC = 'COUNT::DEC';
 // actions
 export const countInc = payload => ({ type: COUNT_INC, payload });
 export const countDec = payload => ({ type: COUNT_DEC, payload });
