@@ -12,15 +12,6 @@ const NewsList = () => {
 	useEffect(() => {
 		const sources = news?.data?.sources;
 		const error = news?.data?.error;
-		// const filt = {
-		// 	category: ['music'],
-		// 	language: ['en'],
-		// 	country: ['au']
-		// };
-
-		// sources.fiter && Object.keys(filt).map(key => {
-
-		// })
 
 		dispatch(
 			appInit({
@@ -37,12 +28,18 @@ const NewsList = () => {
 		);
 	}, [news, dispatch]);
 
+	if (news.isLoading) {
+		return <div data-testid='loading'>Loading...</div>;
+	}
+
+	if (news.isError) {
+		return <div>Error {articleListError}</div>;
+	}
+
 	return (
 		<ul className='news-list'>
-			{ news.isLoading ? <div>Loading...</div>
-			: news.isError ? <div>Error {articleListError}</div>
-			: Array.isArray(newsSources)
-				&& newsSources.map((
+			{
+				Array.isArray(newsSources) && newsSources.map((
 					{ category, language, country },
 					index
 				) => <li key={index} className='news-list__item'>{ `${category} ${language}, ${country}` }</li>)

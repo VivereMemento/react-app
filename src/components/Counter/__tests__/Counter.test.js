@@ -22,6 +22,7 @@ describe('Counter', () => {
 			// then
 			expect(component).toMatchSnapshot();
 		});
+		
 		it('should display count from state', () => {
 			// then
 			const { getByTestId } = component;
