@@ -37,7 +37,7 @@ const NewsList = () => {
 	}
 
 	return (
-		<ul className='news-list'>
+		<ul data-testid='newslist' className='news-list'>
 			{
 				Array.isArray(newsSources) && newsSources.map((
 					{ category, language, country },

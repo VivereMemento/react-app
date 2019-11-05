@@ -17,8 +17,8 @@ jest.mock('../../../store/api', () => {
 	const api = {
 		getNews: jest.fn(() => [state])
 	};
-	api.getNews.getState = () => state;
-	api.getNews.setState = (newState) => {
+	api.getState = () => state;
+	api.setState = (newState) => {
 		state = { ...state, ...newState };
 	};
 
@@ -39,7 +39,7 @@ describe('NewsList', () => {
 	beforeEach(() => {
 		component = setUp();
 	});
-	
+
 	it('should match to snapshot', () => {
 		// then
 		expect(component).toMatchSnapshot();
@@ -49,8 +49,24 @@ describe('NewsList', () => {
 		expect(api.getNews({})[0].data).toBe(null);
 	});
 
+	
 	it('should render loader', () => {
 		const { getByTestId } = component;
 		expect(getByTestId('loading')).toBeTruthy();
+	});
+
+	it('should return state with data value equel to array with object', () => {
+		const sources = [{ category: 'music', language: 'ua', country: 'Ukraine' }]
+		api.setState({
+			data: sources,
+			isError: false,
+			isLoading: false
+		});
+		expect(api.getNews()[0].data).toEqual(sources);
+	});
+
+	it('should render newslist', () => {
+		const { getByTestId } = component;
+		expect(getByTestId('newslist')).toBeTruthy();
 	});
 });
