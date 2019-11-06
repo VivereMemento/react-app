@@ -42,7 +42,7 @@ const NewsList = () => {
 				Array.isArray(newsSources) && newsSources.map((
 					{ category, language, country },
 					index
-				) => <li key={index} className='news-list__item'>{ `${category} ${language}, ${country}` }</li>)
+				) => <li data-testid='newslistitem' key={index} className='news-list__item'>{ `${category} ${language}, ${country}` }</li>)
 			}
 		</ul>
 	);

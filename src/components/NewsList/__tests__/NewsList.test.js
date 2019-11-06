@@ -56,7 +56,13 @@ describe('NewsList', () => {
 	});
 
 	it('should return state with data value equel to array with object', () => {
-		const sources = [{ category: 'music', language: 'ua', country: 'Ukraine' }]
+		const sources = {
+			sources: [
+				{ category: 'music', language: 'ua', country: 'Ukraine' },
+				{ category: 'science', language: 'ua', country: 'Ukraine' }
+			],
+			error: false
+		};
 		api.setState({
 			data: sources,
 			isError: false,
@@ -65,8 +71,16 @@ describe('NewsList', () => {
 		expect(api.getNews()[0].data).toEqual(sources);
 	});
 
-	it('should render newslist', () => {
-		const { getByTestId } = component;
+	it('should render newslist and its items', () => {
+		const sources = {
+			sources: [
+				{ category: 'music', language: 'ua', country: 'Ukraine' },
+				{ category: 'science', language: 'ua', country: 'Ukraine' }
+			],
+			error: false
+		};
+		const { getByTestId, queryAllByTestId } = component;
 		expect(getByTestId('newslist')).toBeTruthy();
+		expect(queryAllByTestId('newslistitem').length).toBe(sources.sources.length);
 	});
 });
