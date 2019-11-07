@@ -1,9 +1,8 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-undef */
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
+import { cleanup } from '@testing-library/react';
 import NewsList from '../NewsList';
+import { setComponentWithProvider } from '../../../helpers/tests';
 import store from '../../../store/store';
 import { api } from '../../../store/api';
 
@@ -28,20 +27,14 @@ jest.mock('../../../store/api', () => {
 	};
 });
 
-const setUp = (props = {}) => {
-	const component = render(<Provider store={store}><NewsList {...props} debug /></Provider>);
-	return component;
-};
-
 describe('NewsList', () => {
 	let component;
 
 	beforeEach(() => {
-		component = setUp();
+		component = setComponentWithProvider(store, NewsList);
 	});
 
 	it('should match to snapshot', () => {
-		// then
 		expect(component).toMatchSnapshot();
 	});
 
@@ -55,32 +48,25 @@ describe('NewsList', () => {
 		expect(getByTestId('loading')).toBeTruthy();
 	});
 
-	it('should return state with data value equel to array with object', () => {
-		const sources = {
+	it('should render newslist and its items', () => {
+		const news = {
 			sources: [
 				{ category: 'music', language: 'ua', country: 'Ukraine' },
 				{ category: 'science', language: 'ua', country: 'Ukraine' }
 			],
 			error: false
 		};
+
 		api.setState({
-			data: sources,
+			data: news,
 			isError: false,
 			isLoading: false
 		});
-		expect(api.getNews()[0].data).toEqual(sources);
-	});
 
-	it('should render newslist and its items', () => {
-		const sources = {
-			sources: [
-				{ category: 'music', language: 'ua', country: 'Ukraine' },
-				{ category: 'science', language: 'ua', country: 'Ukraine' }
-			],
-			error: false
-		};
-		const { getByTestId, queryAllByTestId } = component;
+		cleanup();
+		const { getByTestId, queryAllByTestId } = setComponentWithProvider(store, NewsList);
+
 		expect(getByTestId('newslist')).toBeTruthy();
-		expect(queryAllByTestId('newslistitem').length).toBe(sources.sources.length);
+		expect(queryAllByTestId('newslistitem').length).toBe(news.sources.length);
 	});
 });

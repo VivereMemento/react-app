@@ -1,8 +1,16 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import { Provider } from 'react-redux';
+import { render } from '@testing-library/react';
 import checkPropTypes from 'check-prop-types';
 
-export const setUp = (props = {}, fn) => (Component) => {
-	const component = fn(<Component {...props} debug />);
+export const setComponentWithProvider = (store, Component, props = {}) => {
+	const component = render(<Provider store={store}><Component {...props} debug /></Provider>);
+	return component;
+};
+
+export const setComponent = (Component, props = {}) => {
+	const component = render(<Component {...props} debug />);
 	return component;
 };
 
